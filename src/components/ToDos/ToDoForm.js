@@ -16,11 +16,12 @@ export default function ToDoForm(props) {
     const handleSubmit = (values) => {
         console.log(values)
         if(!props.todo) {
-            const toDoToCreate = {
-                name: values.name,
-                done: false,
-                categoryId: values.caegoryId
-            }
+             const toDoToCreate = values
+            // {
+            //     name: values.name,
+            //     done: false,
+            //     categoryId: values.categoryId
+            // }
             axios.post(`https://localhost:7229/api/ToDos`, toDoToCreate).then(() => {
                 props.setShowCreate(false)
                 props.getToDos()
@@ -47,7 +48,7 @@ export default function ToDoForm(props) {
   return (
     
     <Formik
-        intialValues={{
+        initialValues={{
             name: props.todo ? props.todo.name : '',
             done: props.todo ? props.todo.done : false,
             categoryId: props.todo ? props.todo.categoryId : ''

@@ -24,7 +24,7 @@ export default function SingleToDo(props) {
             done: !props.todo.done,
             categoryId: props.todo.categoryId
         }
-        axios.put(`https://localhost:7229/apis/${props.todo.toDoId}`, updatedToDo).then(response => {
+        axios.put(`https://localhost:7229/api/ToDos/${props.todo.toDoId}`, updatedToDo).then(response => {
             console.log(response)
             props.getToDos()
         })
