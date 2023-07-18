@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navigation from './components/Navigation'
+import Footer from './components/Footer'
+import AuthProvider from './contexts/AuthContext'
+import Login from './components/Auth/Login'
+import Logout from './components/Auth/Logout'
+import Home from './components/Home/Home'
+import Categories from './components/Categories/Categories'
+import ToDos from './components/ToDos/ToDos'
+import NotFound from './components/NotFound'
+import ProtectedRoute from './components/ProtectedRoute'
 
-function App() {
+
+
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div className='App'>
+      <AuthProvider>
+        <Router>
+          <Navigation />
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='categories' element={<ProtectedRoute><Categories/></ProtectedRoute>}/>
+            <Route path='todos' element={<ProtectedRoute><ToDos/></ProtectedRoute>}/>
+            <Route path='*' element={<NotFound/>}/>
+            <Route path='login' element={<Login/>}/>
+            <Route path='logout' element={<Logout/>}/>
+          </Routes>
+          <Footer />
+        </Router>
+      </AuthProvider>
 
-export default App;
+    </div>
+  )
+}

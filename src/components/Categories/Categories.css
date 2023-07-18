@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.categories {
+    min-height: 90vh;
+    background-image: url('../../images/SkatePalmAve.JPG');
+}
+
+.categories h1 {
+    color: white;
+}
+
+.categories table {
+    opacity: .9;
+}
+.categories table th {
+    font-size: 1.3em;
+    font-family: 'PT Serif', serif;
+}
+.categories table tr {
+    font-family: 'PT Serif', serif;
+}
+
+.createCategoryContainer {
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 5px;
+    padding: 1em;
+}

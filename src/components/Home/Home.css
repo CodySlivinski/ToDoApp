@@ -1,0 +1,25 @@
+div.home {
+    background-image: url(../../images/SkatePalmAve.JPG);
+    background-size: 100%;
+    min-height: 78vh;
+    background-color: black;
+    background-repeat: no-repeat;
+}
+
+div.home h1 {
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    background-color: rgba(200, 200, 200, .9);
+}
+
+div.home h3{
+    margin-top: 3em;
+    margin-bottom: 3em;
+    /* background-color: rgba(200, 200, 200, .9); */
+    text-align: center;
+    color: white;
+    
+}
+
